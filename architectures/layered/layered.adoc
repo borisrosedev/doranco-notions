@@ -1,0 +1,75 @@
+= L'architecture en couches
+
+== Qu'est-ce que l'architecture en couches ? 
+
+Vous êtes-vous déjà demandé comment Google fait pour que Gmail fonctionne dans différentes langues à travers le monde ? 
+
+Les utilisateurs peuvent utiliser Gmail tous les jours en anglais, en espagnol, en français, en russe et dans de nombreuses autres langues.
+
+Google a-t-il développé des applications Gmail différentes pour chaque pays ? Bien sûr que non. 
+
+Ils ont développé une version interne qui effectue tout le traitement des messages, puis ont développé différentes interfaces utilisateur externes qui fonctionnent dans de nombreuses langues.
+
+Google a développé l'application Gmail en créant plusieurs couches :
+
+Il existe une couche interne qui effectue tout le traitement.
+
+Il existe une couche externe qui communique avec les utilisateurs dans leur langue. 
+
+Il existe également une autre couche qui interagit avec une base de données où sont stockés les messages électroniques des utilisateurs (des millions ou peut-être des milliards).
+
+Gmail est divisé en au moins trois couches, chacune d'elles a une mission et elles existent séparément pour gérer différents processus à différents niveaux. C'est un excellent exemple d'architecture en couches.
+
+== Quelle est la structure d'une architecture en couches ? 
+
+une architecture en couches standard comporte cinq parties :
+
+La couche d'interaction avec l'utilisateur (User interaction layer) : C'est la couche qui interagit avec les utilisateurs par le biais d'écrans, de formulaires, de menus, de rapports, etc. C'est la couche la plus visible de l'application. Elle définit l'aspect de l'application. 
+
+La couche de fonctionnalités (Functionality Layer) : Il s'agit de la couche qui présente les fonctions, les méthodes et les procédures du système selon la couche des règles de gestion. Elle détermine comment les menus déroulants fonctionnent, comment les boutons fonctionnent et comment le système navigue entre les écrans.
+
+La couche des règles de gestion (Business rules layer) : Cette couche contient des règles qui déterminent le comportement de l'ensemble de l'application, par exemple : « Si une facture est imprimée, il faut envoyer un courriel au client, sélectionner tous les articles vendus et diminuer leur stock dans le module de gestion des stocks. » 
+
+La couche du noyau de l'application (Application core layer) : Cette couche contient les principaux programmes, les définitions du code et les fonctions de base de l'application. Les programmeurs travaillent la plupart du temps sur cette couche. 
+
+La couche de la base de données (Database layer) : Cette couche contient les tables, les index et les données gérées par l'application. Les recherches et les opérations d'insertion/suppression/mise à jour sont exécutées ici. 
+
+== Comment cela fonctionne-t-il en pratique ?
+
+Un système ERP (comptes fournisseurs, comptes clients, gestion des stocks, gestion des RH, gestion de la production, gestion des fournisseurs, achats, trésorerie, finances, comptabilité, etc.) possède une couche d'interaction avec l'utilisateur pour chaque module : écrans, formulaires, menus, rapports. C'est ce que l'utilisateur voit et ce qu'il utilise. 
+
+La couche de fonctionnalités permet de naviguer dans les différents modules, de présenter des séquences d'écran à l'utilisateur et d'effectuer toutes les opérations de saisie de données. 
+
+La couche des règles de gestion détermine le comportement des modules de l'ERP : « Si un nouvel employé est entré dans les modules RH et paie, alors insérez un cours d'introduction dans le menu de formation de l'employé. »
+
+La couche du noyau de l'application est l'endroit où se trouve tout le code du système. C'est là que les développeurs ajoutent des personnalisations et de nouvelles fonctionnalités.
+
+La couche de base de données contient les tables, les index et les données gérées par chacun des modules.
+
+== Avantages de l'architecture en couches:
+
+Les couches sont autonomes 
+
+les changements effectués sur une couche n'affectent pas les autres. 
+
+C'est pratique car nous pouvons augmenter les fonctionnalités d'une couche sans avoir à réécrire toute l'application.
+
+Les couches permettent une meilleure personnalisation du système.
+
+== Inconvénients de l'architecture en couches:
+
+Les couches rendent une application plus difficile à maintenir. Chaque changement nécessite une analyse.
+
+Les couches peuvent affecter les performances des applications car elles créent une surcharge dans l'exécution : chaque couche des niveaux supérieurs doit se connecter à celles des niveaux inférieurs à chaque opération du système.
+
+== Quand utiliser l’architecture en couches ? 
+
+Exemple concret 
+
+Le site web de la banque en ligne
+
+Un site web de banque en ligne est un système qui permet aux clients d’une banque de gérer leurs comptes en utilisant Internet. Ce système est généralement connecté au système central de la banque.
+
+Toutes les banques disposent aujourd'hui d'un système de banque en ligne.
+
+Ces systèmes sont généralement organisés en couches, ainsi si la banque souhaite que le système de banque en ligne ait un aspect différent (pour une nouvelle campagne de promotion de la marque, par exemple), aucun système interne n’a besoin d’être modifié.

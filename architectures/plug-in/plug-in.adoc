@@ -1,0 +1,58 @@
+= L'architecture modulaire
+
+== Qu'est-ce qu'une architecture modulaire ? 
+
+De nombreuses personnes sont préoccupées par la protection de leur vie privée, qu'il s'agisse de protéger leurs données bancaires, leurs mots de passe, ou de s'assurer que personne ne lit leurs messages ou leurs e-mails. 
+
+L'un des moyens d'assurer la protection de la vie privée est le chiffrement, ce que de nombreux logiciels font.
+
+
+La plupart des applications de chiffrement sont installées dans notre navigateur (Chrome, Mozilla, Explorer, etc.) sous la forme de module additionnel : un module qui se superpose au navigateur pour toutes les communications et qui les crypte. 
+
+Cette application s'appelle un module (ou plug-in, en anglais).
+
+Un module ajoute une fonctionnalité qui n'existait pas auparavant. 
+
+
+Vous pouvez même ajouter des fonctionnalités à une application initialement conçue pour tout autre chose. 
+
+Reprenons notre exemple du chiffrement : un navigateur peut être conçu pour naviguer sur le web, visiter des sites web et lire des e-mails. 
+
+Le module, lui, est conçu pour ajouter une fonctionnalité (le chiffrement) à ce navigateur existant.
+
+== Quelle est la structure d'une architecture modulaire ? 
+
+
+Une architecture modulaire standard comporte quatre parties :
+
+=== Les exigences de base du produit (Baseline product requirements) : 
+
+Il s'agit de l'ensemble des exigences minimales qui définissent l'application, déterminées au début du processus de développement lorsqu'un ensemble initial de fonctionnalités a été inclus dans le produit.
+
+=== Le système principal (Main System) : 
+
+Il s'agit de l'application à laquelle on connecte les modules. Le système principal doit fournir un moyen d'intégrer les modules et, par conséquent, il modifiera légèrement le produit de base original pour assurer la compatibilité.
+
+=== L’interface client (Customer Interface) : 
+
+Il s'agit de la partie qui interagit avec le client, par exemple, un navigateur web (Chrome, Mozilla, etc.).
+
+
+=== Les modules (Plug-in) : 
+
+Il s'agit de modules complémentaires qui complètent les exigences minimales de l'application et lui confèrent des fonctionnalités supplémentaires. 
+
+
+== Avantages de l'utilisation de l'architecture modulaire 
+
+L'architecture modulaire est le meilleur moyen d'ajouter une fonctionnalité à un système qui n'a pas été conçu initialement pour cela. 
+
+Cette architecture supprime les limites de quantité de fonctionnalités qu'une application peut offrir. 
+
+Nous pouvons ajouter une infinité de modules (le navigateur Chrome dispose de centaines de modules appelés extensions).
+
+== Inconvénients de l'utilisation de l'architecture modulaire 
+
+Les modules peuvent être une source de virus et d'attaques venant d'acteurs externes. 
+
+La présence de nombreux modules dans une application peut affecter ses performances.

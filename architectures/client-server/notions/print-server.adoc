@@ -1,0 +1,23 @@
+= Serveur d'impression
+
+== Définition
+
+Un serveur d'impression est un dispositif qui relie les utilisateurs d'un réseau à un groupe d'imprimantes. 
+
+Les utilisateurs envoient leurs demandes d'impression au serveur d'impression plutôt qu’aux imprimantes directement. 
+
+Le serveur d'impression gère les authentifications, les autorisations et les priorités des travaux.
+
+Tout logiciel de réseau comprend un serveur d'impression. 
+
+=== Exemples :
+
+Microsoft Windows Homegroup.
+
+Linux Network Manager.
+
+HP Network Management Center.
+
+=== ...
+
+Les serveurs d'impression utilisent généralement une architecture client-serveur, puisqu'ils peuvent connecter différents clients disposant de différents périphériques ou systèmes d'exploitation, à un groupe d'imprimantes qui peuvent elles aussi être très diverses.

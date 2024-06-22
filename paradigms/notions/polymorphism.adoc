@@ -1,0 +1,4 @@
+= Le Polymorphisme
+
+Le Polymorphisme en programmation orienté objet est la capacité de créer une méthode qui aurait plusieurs façons d’être exécutée suivant la nature des paramètres qu’elle reçoit.
+

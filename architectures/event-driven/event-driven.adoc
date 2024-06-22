@@ -1,0 +1,145 @@
+= L'architecture pilotée par les événements
+
+== Qu'est-ce que l'architecture pilotée par les événements ? 
+
+L'architecture pilotée par les événements fonctionne ainsi : elle produit, détecte et agit selon les événements du système pertinents pour les utilisateurs.
+
+Si aucun événement ne se produit, rien ne se passe dans le système. Cette architecture définit ces événements indispensables comme **des déclencheurs**. 
+
+Lorsque ces déclencheurs s’activent, ils provoquent des comportements spécifiques, comme l'envoi d'une alerte lorsque le prix de l'article que vous voulez baisse.
+
+
+== Définitions
+
+=== Événement : quelque chose qui se produit et qui affecte un utilisateur d'un système.
+
+=== Déclencheur : 
+
+un type d'événement. C'est un petit événement qui induit un comportement.
+
+== Comportement : 
+
+une réaction à un événement.
+
+
+
+== Comment savoir quels comportements ajouter ?
+
+En général, les clients indiquent pour quels types d’événements ils veulent être informés, et ce qu'ils veulent que le système fasse quand ces événements se produisent. 
+
+
+=== Par exemple :
+
+Si le prix de l'action X atteint 50 € (déclencheur), veuillez m'envoyer un email (comportement).
+
+Si, dans notre entreprise, un vendeur saisit un bon de commande (déclencheur), alors affichez un message sur l'écran initial du gestionnaire de dépôts lorsqu'il se connecte au système (comportement).
+
+Si un client achète un billet sur notre compagnie aérienne pour un vol donné et que le paiement est approuvé (déclencheur), il faut immédiatement marquer le siège réservé sur le vol correspondant comme « occupé » (comportement).
+
+
+== Quelle est la structure de l'architecture pilotée par les événements ? 
+
+Une architecture pilotée par les événements habituelle comporte au moins les composants suivants :
+
+=== Le bus d'événements (Event Bus) : 
+
+Il s'agit d'une ligne de communication qui relie tous les utilisateurs aux événements. 
+
+Cette ligne n'est pas un câble physique mais fait référence à une connexion logique, similaire à celle qui existe entre votre ordinateur portable et un site web que vous visitez. 
+
+Les événements sont transportés par ce bus d'événements abstrait et atteignent tous les utilisateurs du système. 
+
+Le bus n'existe pas réellement, mais il sert à décrire l'échange de données entre de nombreux composants ou utilisateurs. 
+
+=== Le canal d'événements (Event Channel) : 
+
+Un canal d'événements est une étiquette pour le type d'événements auxquels les utilisateurs s'abonnent. Par exemple, le canal « ventes » publiera tous les événements concernant les ventes à tous les utilisateurs abonnés. 
+
+Sur Twitter, un hashtag comme #awesomejapan est un canal qui rassemble tous les tweets publiés par d'autres utilisateurs et contenant ce même hashtag. Si un utilisateur est abonné à un canal donné, il recevra tous les messages qui s'y rapportent. 
+
+=== Le traitement des événements (Event Processing) : 
+
+Toutes les actions entreprises après un événement donné sont exécutées dans le module de traitement des événements. Ce module agit selon un événement donné pour servir l'utilisateur. 
+
+Par exemple : « Si je reçois ce type de message, faites ceci », ou de façon plus concrète : « Si je reçois un message de nouvel achat, alors facturez le client ».
+
+
+
+== Comment cela fonctionne-t-il en pratique ? 
+
+Reprenons nos exemples précédents et examinons comment une architecture pilotée par les événements prend en charge leur fonctionnalité :
+
+Si le prix de l'action X atteint 50 €, envoyez-moi un email. 
+
+=== Comment cela se passe-t-il ? 
+
+L'utilisateur dispose d'une liste d'actions pour lesquelles il souhaite recevoir une notification. 
+
+L'utilisateur choisit l'action X et sélectionne une condition (supérieur à 40 $). 
+
+L'utilisateur sélectionne une option dans un menu des possibilités comme « Envoyez-moi un e-mail », « Alertez-moi lorsque je me connecte au système », « Envoyez-moi un SMS », etc. 
+
+Lorsque l'événement correspondant se produit, il est publié dans le bus d'événements, le système y réagit et les utilisateurs abonnés reçoivent un message.
+
+Si, dans notre entreprise, un vendeur saisit un bon de commande, alors affichez un message sur l'écran initial du gestionnaire de dépôts lorsqu'il se connecte au système. Comment cela se passe-t-il ? Il existe un canal préexistant dans le système appelé « Purchase_Orders » (Bons de commande). Les utilisateurs qui ont besoin de savoir qu'un nouvel achat a été effectué (gestionnaire des stocks, responsable du marketing, responsable de la logistique, etc.) sélectionnent une option « S'abonner aux canaux » dans un menu et voient tous les canaux possibles prédéfinis par le système. Ils sélectionnent le canal auquel ils veulent s'abonner. Lorsque l'événement correspondant se produit, il est publié dans le bus d'événements, et les utilisateurs abonnés reçoivent un message.
+
+Si un client achète un billet sur notre compagnie aérienne pour un vol donné et que le paiement est approuvé, il faut immédiatement marquer le siège réservé sur le vol correspondant comme « occupé ». Comment cela se passe-t-il ? Il existe un canal préexistant dans le système appelé « New_Ticket » (Nouveau Billet). Les utilisateurs qui ont besoin de savoir qu'un nouveau billet a été acheté (responsable des opérations, personnel d'assistance au sol, etc.) sélectionnent une option « S'abonner aux canaux » dans un menu et ils voient tous les canaux possibles prédéfinis par le système. Ils sélectionnent le canal auquel ils veulent s'abonner. Lorsqu'un billet est vendu, il est publié dans le bus d'événements et le système y réagit.
+
+== Avantdes de l'utilisation d'une architecture pilotée par les événements
+
+Si vous avez des utilisateurs qui ont besoin d'écouter (de s'abonner à) différents messages sur un sujet spécifique, l'architecture pilotée par les événements est la bonne approche. 
+
+Cela se produit lorsque le système doit réagir à des événements sans comportement prédictif : par exemple, si je m'abonne à la chaîne « Informations JS », je n'ai aucun contrôle sur les actualités que je recevrai ni sur leur quantité. 
+
+Le système n'est pas prédictif, il réagit aux événements générés par d'autres utilisateurs.
+
+Si ces utilisateurs sont en dehors de l'organisation, les événements peuvent être transportés dans un bus d'événements publics et atteindre tous les utilisateurs immédiatement.
+
+De nombreux événements peuvent être traités en même temps, voire des millions.
+
+== Inconvévients de l'utilisation d'une architecture pilotée par les événements
+
+Le bus d'événements peut être surchargé. 
+
+Si le bus d'événements tombe en panne, tout le système tombe en panne.
+
+Il n'y a pas de contrôle du flux d'événements : de nombreux événements peuvent se produire en même temps, créant un véritable chaos pour les utilisateurs.
+
+
+== Quand utiliser l'architecture pilotée par les événements ? 
+
+
+
+== Système de micro-blogging
+
+Un système qui publie des messages courts et permet aux utilisateurs de les recevoir dans leur flux en fonction des canaux ou des sujets.
+
+twitter.com.
+
+Il peut y avoir des millions de canaux puisqu'ils sont définis par les utilisateurs.
+
+Les utilisateurs s'abonnent ou se désabonnent aux canaux comme ils le souhaitent.
+
+=== Système d’approvisionnement
+
+Un système d'approvisionnement est une application d'une société de téléphonie mobile qui crée une ligne téléphonique lorsque le client en achète une, définit les procédures de facturation correspondantes en fonction du client et s'assure que l'appareil parvient au client.
+
+Oracle Business Suite (oracle.com).
+
+Amdocs Provisioning System (Amdocs.com).
+
+Les opérateurs de téléphonie mobile disposent de milliers de points de vente dans les centres commerciaux, dans la rue et dans d'autres lieux publics.
+
+Lorsqu'une ligne est vendue à un client, un événement est publié dans le bus d'événements. De nombreuses applications des systèmes internes de l'entreprise sont abonnées à ce type d'événement (canal) et agissent en conséquence.
+
+=== Système d'automatisation d'usine
+
+Un système d'automatisation d'usine est un système logiciel qui contrôle la production dans une usine, généralement dans un environnement robotisé.
+
+Ce système agit généralement sur des événements qui se produisent dans le processus de production, par exemple, un certain moteur qui dépasse un seuil de température.
+
+Siemens STEP7 (siemens.com).
+
+Rockwell Factory Talk (rockwell.com).
+
+Si aucune erreur ne se produit, la production de l'usine se poursuit normalement. Si une erreur, une exception ou un avertissement est détecté par le système de contrôle, un événement est publié dans le bus d'événements et de nombreux modules de contrôle peuvent y réagir.

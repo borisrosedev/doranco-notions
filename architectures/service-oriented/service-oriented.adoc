@@ -1,0 +1,85 @@
+= L'architecture orientée services
+
+== Qu'est-ce que l'architecture orientée services ? 
+
+Imaginez que vous achetiez un article sur le site marchand d'une marque très connue. 
+
+Vous sélectionnez l'article, la taille, la couleur, puis vous passez à la caisse sur le site. 
+
+Vous payez l'article avec votre carte de crédit ou un autre mode de paiement et choisissez la livraison à votre domicile, éventuellement grâce à un **service de livraison** tel que ChoroPost.
+
+Selon votre adresse de livraison, le site web vous donne immédiatement un numéro de suivi pour votre colis. 
+
+Il s'agit d'un numéro unique et long (20 chiffres) utilisé pour suivre votre colis. À partir de cet instant, vous pouvez accéder au site Internet du détaillant et vérifier à tout moment la localisation de votre colis.
+
+Si nous examinons cette situation, il semble que le site marchand ait « parlé » avec ChronoPost lorsque vous avez effectué l'achat, et qu'il ait pu vous communiquer immédiatement votre numéro de suivi. 
+
+
+Les deux sociétés ont communiqué ensemble lors de l'achat de l'article pour que vous puissiez suivre votre colis grâce au numéro donné.
+
+Les deux sites y sont parvenus grâce à une architecture orientée services. 
+
+Dans cette architecture, les services sont fournis à des consommateurs externes par un processus de communication sur un réseau (Internet). Dans notre exemple, FedEx est le fournisseur de services, et le site marchand est le consommateur de services. 
+
+Les services de FedEx sont mis à la disposition de ce client externe via une architecture orientée services. 
+
+== Quelle est la structure d'une architecture orientée services ? 
+
+Une architecture orientée services standard comporte quatre parties :
+
+=== Le dépôt de services web (Web service repository) : 
+
+Il s'agit d'une bibliothèque de services web conçue pour répondre à des demandes d'informations externes. 
+
+=== ...
+
+L'information fournie est généralement un petit élément, comme un numéro, un mot, quelques variables, etc. Par exemple, un numéro de vol, un numéro de suivi de colis, le statut d'une commande (une lettre), etc. 
+
+
+=== ...
+
+Cette bibliothèque est généralement documentée de manière très détaillée, car des applications externes font appel aux fonctions qu'elle contient. 
+
+=== Le contrôleur de services web (Web service controller) : 
+
+Ce module communique les informations contenues dans le dépôt de services web aux demandeurs de services. Lorsqu'un demandeur de service externe appelle une certaine fonction du dépôt de services web, le contrôleur de services web interprète la demande et recherche la fonction dans le dépôt de services web. 
+
+Il exécute ensuite cette fonction et renvoie une valeur au demandeur.
+
+
+=== Le serveur de base de données (Database Server) : 
+
+Ce serveur contient les tables, les index et les données gérés par l'application. 
+Les recherches et les opérations d'insertion/suppression/mise à jour sont exécutées ici. 
+
+
+=== Les demandeurs de services (Service Requester) : 
+
+Il s'agit d'applications externes qui demandent des services au dépôt de services web par l'intermédiaire d'Internet, comme une organisation demandant des informations sur les vols à une compagnie aérienne, ou une autre entreprise demandant à un transporteur la localisation d'un colis à un moment donné.
+
+=== ...
+
+Notez que l'architecture orientée services est créée par l’entreprise qui fournit le service et non par celle qui le consomme, cela permet de simplifier les connexions avec les clients éventuels.
+
+=== ...
+
+== Avantages de l'utilisation d'une architecture orientée services
+
+Ce modèle permet de collaborer avec des acteurs externes sans les laisser accéder à nos systèmes. 
+
+
+Il permet également de partager avec le monde entier, de manière ordonnée et contrôlée, la sélection des fonctions les plus populaires du site.
+
+
+== Inconvénients de l'utilisation d'une architecture orientée services
+
+Les services web peuvent représenter une faiblesse au niveau du site pour les pirates qui veulent engorger le système. 
+
+Certaines formes d'attaques sont des « dénis de service ». 
+
+Elles consistent à demander le même service web des millions de fois par seconde, jusqu'à ce que le serveur tombe en panne. 
+
+Il existe aujourd'hui une technologie permettant de résoudre ce problème, mais c'est toujours un problème à prendre en compte dans les architectures de services web.
+
+Le propriétaire du service web aide d'autres sites, mais reçoit une petite rémunération pour ce faire.
+

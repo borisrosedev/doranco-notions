@@ -1,0 +1,7 @@
+= La programmation orientée objet
+
+== Qu’est-ce que la programmation orientée objet ?
+
+La programmation orientée objet est un paradigme de programmation qui permet de modéliser son code sous forme d’objets ayant des propriétés et de méthodes et qui interagissent entre eux plutôt qu’une séquence d’instructions.
+
+

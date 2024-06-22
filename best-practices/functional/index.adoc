@@ -1,0 +1,106 @@
+= Les principes de la programmation fonctionnelle 
+
+== Fonctions pures 
+
+Une fonction pure est une fonction qui retournera systématiquement le même résultat tant qu’on lui passe les mêmes paramètres. 
+
+On l’appelle aussi **idempotent**.
+
+=== Exemple 
+
+Par exemple, une fonction qui vient incrémenter un compteur :
+
+[source, javascript]
+----
+let counter = 0
+
+function increment( incrementBy = 1) {  
+    counter += incrementBy
+}    
+
+increment(1) 
+
+----
+
+Cette fonction est **impure** car si je l’appelle 3 fois de suite avec le même paramètre, elle me retournera toujours quelque chose de différent. 
+
+
+En suivant la règle de privilégier les fonctions pures, cette fonction donnerait plutôt:
+
+[source, javascript]
+----
+
+function increment(counter, incrementBy = 1) {  
+    counter += incrementBy
+}
+
+increment(0,1)
+----
+
+
+Cette fonction en revanche retournera toujours la même donnée tant que les paramètres restent inchangés. 
+
+Étant donné qu’en programmation fonctionnelle nous souhaitons éviter les états partagés, nous **déléguons la responsabilité** de transmettre le compteur initial à une autre fonction. 
+
+Ainsi, nous pouvons garder une fonction pure.
+
+=== Problème
+
+Toutes les fonctions ne pourront pas être pures. 
+
+Les appels HTTP, les requêtes en base de données, la génération de dates ou de nombres…
+
+Dans le cadre du développement d’une application suivant le paradigme de programmation fonctionnelle, il faut viser à garder sa **logique métier pure**, et déléguer les fonctions impures en dehors, en utilisant des méthodes comme **l’injection de dépendance** ou des **lazy functions**.
+
+== Composition et les High Order functions
+
+=== Les High Order Functions
+
+Les High Order Functions, ou fonctions de premier ordre, sont des fonctions qui prennent une ou plusieurs fonctions en paramètre pour en retourner une autre. 
+
+=== Exemple
+
+La fonction .map() en JavaScript est un exemple de fonction de premier ordre car elle prend en paramètre une fonction.
+
+=== La composition de fonction
+
+La composition de fonction quant à elle consiste à combiner plusieurs fonctions de façon à produire un résultat, via notamment l’utilisation de fonctions de premier ordre.
+
+=== Exemple de composition de fonction:
+
+[source, javascript]
+----
+const numbers = [1,2,3,4,5,6,7,8,9,10]
+const isEven = x => x % 2 === 0
+const filterOutOddNumbers = numbers.filter(isEven)// [2,4,6,8,10]
+----
+
+L’idée derrière la composition est de pouvoir respecter **le Single Responsibility Principle**, comme quoi chaque fonction n’a qu’une seule tâche, et de faire passer notre logique à travers un flux de fonctions pures.
+
+
+== Immuabilité
+
+L’immuabilité de la donnée est un concept essentiel à la programmation fonctionnelle dans son but d’éviter les états partagés et les effets de bords.
+
+Il ne faut pas penser que l’utilisation de const suffit à rendre vos variables **immuables**. 
+
+=== Exemple
+
+[source, javascript]
+----
+const obj = {}
+obj.a = 'foo'console.log(obj)// {a:'foo'}
+const array = []
+array.push(1)console.log(array) //[1]
+----
+
+La programmation fonctionnelle propose de faire naviguer vos données à travers un flux de fonctions. 
+
+En passant une donnée immuable en entrée d’une fonction, cette dernière retournera une nouvelle donnée, elle-même immuable, issue de l’exécution de cette fonction.
+
+=== Exemples
+
+Les fonctions filter, map et reduce parcourent un tableau en entrée, appliquent la fonction passée en paramètre et retournent un nouveau tableau. 
+
+Elles ne modifient pas le tableau original contrairement à si vous utilisiez un forEach ou une boucle for.
+

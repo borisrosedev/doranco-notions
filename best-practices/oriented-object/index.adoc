@@ -1,0 +1,51 @@
+= S.O.L.I.D
+
+== Introduction
+
+Mis en évidence par Robert C Martin dans son article « Design Principles and Design Patterns », les principes SOLID sont des bonnes pratiques de programmation. 
+
+
+Ces principes ont pour but de réduire la complexité du code, le couplage entre les classes, prône **la séparation des responsabilités** et défini les relations entre ces dernières.
+
+== Les principes S.O.L.I.D
+
+L’acronyme S.O.L.I.D représente les principes suivant :
+
+=== Single Responsibility :
+
+"A class should have one and only one reason to change"
+
+Ce principe est qu’une classe ne devrait contenir que des méthodes et propriétés qui lui sont directement liées. 
+
+Elle ne doit faire agir que sur la représentation de l’objet qu’elle représente.
+
+=== Open/Closed :
+
+"You should be able to extend a classes behavior, without modifying it."
+
+Les entités logicielles, qu’ils soient des classes, des modules ou des fonctions, doivent être capables d’être étendus sans toutefois être eux-mêmes modifiés.
+
+
+=== Liskov Substitution :
+
+"Derived classes must be substitutable for their base classes."
+
+Ce principe porte le nom de Barbara Liskov qui a expliqué qu’avant de faire hériter une classe, il est important de penser aux conséquences en amont et en aval sur cette classe. 
+
+Ce principe a pour but de maintenir un système d’héritage de classes fonctionnel en forçant le développeur à concevoir ses classes et méthodes de telle sorte à ce qu’elles puissent toutes fonctionner quelle que soient les paramètres qui seront passés à ses objets.
+
+=== Interface Segregation :
+
+"Make fine grained interfaces that are client specific."
+
+Le principe de ségrégation par les interfaces stipule qu’il est préférable d’avoir une multitude d’interfaces spécifiques que vos classes implémenteront plutôt que de faire hériter des classes qui ont plusieurs méthodes en trop.
+
+=== Dependency Inversion :
+
+"Depend on abstractions, not on concretions.""
+
+Le principe d’inversion de dépendances est conçu pour faciliter les changements de comportements et l’évolution du code à l’avenir.
+
+En effet, notre approche naïve de modélisation d’une solution nous pousse à empiler des briques qui vont dépendre de celles d’en dessous pour leur bon fonctionnement. 
+
+L’inversion de dépendance suggère d’utiliser des abstractions de ces classes afin d’inverser la dépendance, gardant les briques fonctionnelles au cœur de votre système et laissant les briques utilitaires en surface.

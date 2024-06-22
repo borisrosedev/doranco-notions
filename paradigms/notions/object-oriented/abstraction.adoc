@@ -1,0 +1,7 @@
+= L'abstraction
+
+== Défintion
+
+**L’abstraction** est le principe le plus fondamental de la programmation orientée objet. 
+
+Il consiste à afficher ou masquer les détails d’un objet à l’utilisateur (ou aux autres objets avec lequel il interagit) pour n’exposer que les éléments qui leur seront utiles.

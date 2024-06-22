@@ -1,0 +1,3 @@
+= Définition d'un DataWarehouse
+
+Les entrepôts de données sont utilisés pour le stockage centralisé et structuré des données, souvent utilisé pour l'analyse.

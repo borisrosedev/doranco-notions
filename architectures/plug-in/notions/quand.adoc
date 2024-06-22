@@ -1,0 +1,22 @@
+= Quand utiliser l'architecture modulaire ? 
+
+== Logiciel de chiffrement
+
+Un logiciel de chiffrement est un système qui crypte un texte à l'aide d'une clé secrète. L'expéditeur crypte le message avec la clé secrète et le récepteur le décrypte, en supposant que le récepteur possède la clé.
+
+=== Exemples
+SendSafely (sendsafely.com).
+Mailvelope (mailvelope.com).
+=== ...
+
+Le processus de chiffrement se fait automatiquement, à l'insu de l'utilisateur. L'utilisateur écrit un e-mail et celui-ci est crypté par le module. Tout ce processus est invisible pour l'utilisateur.
+
+
+== Module d'information sur les sites web locaux
+
+Un module d'informations sur les sites web locaux est un module qui apporte les informations d'un site web directement dans une fenêtre de votre navigateur. Cela évite d'ouvrir plusieurs onglets sur le même site.
+
+Rapportive (rapportive.com) connecte LinkedIn à votre navigateur.
+Trello (trello.com) connecte Trello à votre navigateur.
+
+Ces modules apportent des informations directement d'un site web à une fenêtre de votre navigateur.

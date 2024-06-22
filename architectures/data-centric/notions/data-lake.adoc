@@ -1,0 +1,3 @@
+= Définition d'un DataLake
+
+Les lacs de données permettent de stocker de grandes quantités de données brutes dans leur format natif, offrant une plus grande flexibilité pour la gestion des données variées.

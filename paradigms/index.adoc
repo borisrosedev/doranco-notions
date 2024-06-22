@@ -1,0 +1,133 @@
+= Paradigmes de programmation
+
+== Introduction
+
+Quelle que soit votre expérience en développement, votre façon de coder suit un paradigme de programmation. 
+
+=== Impératif
+
+Certains langages imposent un paradigme, comme C++ impose la programmation orientée objet ou Clojure impose la programmation fonctionnelle.
+
+=== Permissif
+
+Le PHP ou JavaScript sont plus permissifs et vous laissent dérouler votre code comme bon vous semble.
+
+
+== Qu’est-ce qu’un paradigme de programmation ?
+
+Un paradigme de programmation est une approche logique qu’un développeur va adopter pour résoudre son problème. Le paradigme le plus courant est la programmation impérative. Les étapes d’instructions se suivent jusqu’à arriver au résultat escompté.
+
+=== Exemple
+Dans le cas d’une fonction qui voudrait produire une omelette, les instructions seraient :
+
+Prendre 3 œufs
+Casser les œufs dans un bol
+Battre les œufs
+Faire chauffer une poêle
+Mettre de la matière grasse dans sa poêle
+Verser le mélange un dans la poêle chaude
+Attendre 5 minutes
+Servir.
+
+
+
+Cette approche consistant à donner des instructions les unes à la suite des autres suit un paradigme de programmation impératif. 
+
+Si ce paradigme marche très bien pour les petits scripts, il devient inapproprié pour des codebases plus conséquentes. Le **code impératif (ou procédural)** n’est pas réutilisable sans rendre le code source tel un plat de spaghetti indémêlable.
+
+
+C’est pourquoi il existe de nombreux autres paradigmes pour nous aider dans la conception de nos codes sources.
+
+
+=== Autres paradigmes
+
+Les paradigmes les plus courants sont la **programmation réactive**, popularisée dans l’écosystème JavaScript par la librairie RxJS et par défaut inclus dans les framework Angular et Nestjs, la programmation orientée objet et la programmation fonctionnelle.
+
+
+== La programmation orientée objet 
+
+=== Qu’est-ce que la programmation orientée objet ?
+
+La programmation orientée objet est un paradigme de programmation qui permet de modéliser son code sous forme d’objets ayant des propriétés et de méthodes et qui interagissent entre eux plutôt qu’une séquence d’instructions.
+
+Illustration du paradigme de programmation orientée objet avec l'exemple d'un chat, ses propriétés et ses méthodes.
+
+
+Ici l’exemple un objet « Chat » avec ses propriétés et ses méthodes
+
+== Les principes de la programmation orientée objet
+
+=== L'abstraction
+L’abstraction est le principe le plus fondamental de la programmation orientée objet. Il consiste à afficher ou masquer les détails d’un objet à l’utilisateur (ou aux autres objets avec lequel il interagit) pour n’exposer que les éléments qui leur seront utiles.
+
+=== L'encapsulation
+L’encapsulation est un des principes de la programmation orientée objet qui permet de lier de la donnée au code qui la manipule tout en la protégeant des actions pouvant altérer cette donnée.
+
+=== L'héritage
+L’héritage (ou inheritance en anglais) est le principe de la POO qui permet à un objet d’acquérir les propriétés d’un autre objet. Souvent on parle d’héritage de classes pour faire référence à cette notion.
+
+=== Le Polymorphisme
+Le Polymorphisme en programmation orienté objet est la capacité de créer une méthode qui aurait plusieurs façons d’être exécutée suivant la nature des paramètres qu’elle reçoit.
+
+
+== La rogrammation fonctionnelle 
+
+=== Qu’est-ce que la programmation fonctionnelle ?
+
+La programmation fonctionnelle est un paradigme de programmation déclaratif, traitant des opérations successivement en évitant les mutations de données et les changements d’état.
+
+La programmation fonctionnelle est un paradigme plus difficile à prendre en main car moins étudié dans les disciplines informatiques
+
+Un code source conçu en programmation fonctionnelle va être plus concis, plus prédictible et plus facile à tester qu’un code source programmé avec la programmation orientée objet. 
+
+En revanche, il va paraître plus dense et plus compliqué à comprendre pour les développeurs plus juniors.
+
+Par opposition à la programmation orientée objet, l’approche fonctionnelle de la programmation consiste à éviter **les changements d’états** et **les effets de bords** dans un code source en se basant sur **les principes d’immuabilité et de composition de fonctions**.
+
+=== Exemple avec le problème majeur de la "Race Condition"
+
+Imaginons un programme orienté objet comportant l’objet Commande. 
+
+Cet objet a pour propriétés items, dateDeLivraison, adresseDeLivraison, etc. 
+
+Il a également différentes méthodes dont save, permettant d’enregistrer son état actuel en base de données. C’est ce qu’on appelle un état partagé. 
+
+Un objet Commande peut être accessible à plusieurs endroits.
+
+Si l’utilisateur vient modifier la date de livraison, le serveur va envoyer une requête pour modifier la commande en base de données et retourner l’objet complet de la commande pour remplacer l’objet commande avec cette nouvelle donnée en mémoire.
+
+Sauf que simultanément, sa femme modifie l’adresse de livraison avant que le serveur ait pu sauvegarder et lui retourner la nouvelle date de livraison. Sur son interface à elle, elle accède à l’ancienne version de l’objet, avec l’ancienne date de livraison, puis elle sauvegarde à son tour.
+
+
+La requête initiale va être écrasée avec une donnée obsolète. Il s’agit d’une **race condition**. Ce genre de bug est très difficile à identifier, débugger et tester.
+
+=== Exemple le problème des fonctions temporellement liées
+
+Une autre erreur peut être lorsque les fonctions sont temporellement liées. 
+
+Par exemple, on ne peut pas définir de date de livraison avant d’avoir défini une adresse de livraison. Or si l’adresse de livraison n’est pas validée par votre service 
+
+La Poste qui vérifie les adresses, vous vous retrouvez avec **des erreurs en cascades**.
+
+Ces erreurs sont issues de **l’état partagé d’un objet**, ce contre quoi la programmation fonctionnelle essaye de lutter. 
+
+
+
+== Programmation Orientée Objet vs Programmation Fonctionnelle
+
+
+Ces dernières années, la programmation fonctionnelle a connu une popularité grandissante au sein de différents écosystèmes.Cependant, elle n'est pas la panacée.
+
+Certains langages vont imposer un paradigme de programmation, tandis que d’autres, comme JavaScript, vont vous laisser libre choix de celui que vous préférez.
+
+Suivant la complexité du système que vous cherchez à modéliser, vous opterez pour de la programmation fonctionnelle, de la programmation orientée objet ou parfois même de la programmation impérative.
+
+Par exemple si vous développez un simple script de scraping ou de data processing qui va tenir dans un petit nombre de fichiers et ne pas être amené à grandir, la programmation impérative, aussi simple soit-elle, va répondre à votre besoin le plus simplement.
+
+Si en revanche vous avez un système plus complexe à modéliser, le fait de représenter vos éléments en objets avec des propriétés et des méthodes peut vous simplifier la conception.
+
+Enfin, parfois il vous paraîtra plus naturel d’imaginer un flux par lequel votre programme va passer et dans ces cas-là, la programmation fonctionnelle fait sens.
+
+
+
+

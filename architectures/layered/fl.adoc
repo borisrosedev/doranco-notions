@@ -1,0 +1,9 @@
+= Functionality Layer
+
+== Définition
+
+La couche de fonctionnalités (Functionality Layer) : 
+
+Il s'agit de la couche qui présente les fonctions, les méthodes et les procédures du système selon la couche des règles de gestion. 
+
+Elle détermine comment les menus déroulants fonctionnent, comment les boutons fonctionnent et comment le système navigue entre les écrans.

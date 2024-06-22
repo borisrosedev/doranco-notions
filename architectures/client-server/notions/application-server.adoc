@@ -1,0 +1,9 @@
+= Le serveur d'application (Application Server) : 
+
+== Définition
+
+Il s'agit du Serveur où sont installés les modules logiciels de l'application. 
+
+Il se connecte à la base de données et interagit avec les utilisateurs. 
+
+Le serveur d'application est comme le cuisinier du restaurant.

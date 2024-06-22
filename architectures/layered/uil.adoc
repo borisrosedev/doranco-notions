@@ -1,0 +1,5 @@
+= User interaction layer
+
+== Définition
+
+La couche d'interaction avec l'utilisateur (User interaction layer) : C'est la couche qui interagit avec les utilisateurs par le biais d'écrans, de formulaires, de menus, de rapports, etc. C'est la couche la plus visible de l'application. Elle définit l'aspect de l'application. 

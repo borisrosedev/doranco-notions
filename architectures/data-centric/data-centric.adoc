@@ -1,0 +1,135 @@
+= Architecture centrée sur les données
+
+== Définition
+
+=== Aucune focale sur les applications et processus
+
+Contrairement à des architectures plus traditionnelles qui sont souvent centrées sur les applications ou les processus, cette approche place les données et leur gestion au cœur des préoccupations. 
+
+== Principes Clés de l'Architecture Centrée sur les Données
+
+=== Priorité aux Données :
+
+Les données sont considérées comme des actifs stratégiques primordiaux.
+
+Les décisions de conception sont guidées par la façon dont les données sont stockées, accessibles et gérées.
+
+=== Indépendance des Applications :
+
+Les applications sont conçues pour être facilement remplaçables et interchangeables.
+
+Les données ne dépendent pas d'une application spécifique pour leur intégrité et leur accessibilité.
+
+=== Interopérabilité et Partage :
+
+Les systèmes sont conçus pour permettre un partage de données fluide entre différentes applications et services.
+
+Les formats de données et les standards sont choisis pour maximiser l'interopérabilité.
+
+=== Centralisation de la Gouvernance des Données :
+
+Les politiques de gouvernance des données sont centralisées, même si les données elles-mêmes peuvent être distribuées.
+
+Cela inclut la gestion des accès, de la qualité des données et de la conformité réglementaire.
+
+=== Flexibilité et Agilité :
+
+Les systèmes doivent être capables de s'adapter rapidement aux changements, que ce soit dans les types de données gérés ou dans les applications qui accèdent à ces données.
+
+L'architecture doit soutenir l'intégration rapide de nouvelles sources de données et de nouveaux consommateurs de données.
+
+Composants de l'Architecture Centrée sur les Données
+
+=== Modèle de Données Commun :
+
+Un schéma ou un modèle de données commun qui définit comment les données sont structurées et organisées dans le système.
+
+Cela facilite la cohérence et l'intégrité des données à travers différentes applications.
+
+=== Entrepôts de Données (Data Warehouses) et Lacs de Données (Data Lakes) :
+
+Les entrepôts de données sont utilisés pour le stockage centralisé et structuré des données, souvent utilisé pour l'analyse.
+
+
+Les lacs de données permettent de stocker de grandes quantités de données brutes dans leur format natif, offrant une plus grande flexibilité pour la gestion des données variées.
+
+
+=== API de Données et Microservices :
+
+Des API sont mises en place pour permettre un accès standardisé aux données.
+
+
+Les microservices peuvent être utilisés pour encapsuler les fonctions de gestion des données, favorisant la modularité et l'évolutivité.
+
+
+=== Outils de Gestion et de Qualité des Données :
+
+Des outils pour gérer, nettoyer et assurer la qualité des données, comme les solutions de Master Data Management (MDM).
+
+
+Ces outils assurent que les données sont précises, complètes et disponibles quand et où elles sont nécessaires.
+
+=== Sécurité et Conformité :
+
+Les mécanismes de sécurité robustes sont essentiels pour protéger les données sensibles.
+
+
+La conformité aux réglementations (comme GDPR ou CCPA) est intégrée dès la conception.
+
+== Bénéfices de l'Architecture Centrée sur les Données
+
+=== Meilleure Utilisation des Données :
+
+En plaçant les données au centre, les organisations peuvent mieux exploiter les informations disponibles pour la prise de décisions stratégiques.
+
+Les données sont plus accessibles et peuvent être utilisées de manière plus cohérente à travers différents systèmes et processus.
+
+
+=== Réduction de la Redondance :
+
+Les données ne sont pas dupliquées à travers les systèmes, réduisant les incohérences et les coûts associés à la gestion de plusieurs copies de données.
+
+
+=== Amélioration de l'Agilité :
+
+Les systèmes peuvent évoluer plus facilement pour répondre à de nouveaux besoins d'affaires ou pour intégrer de nouvelles technologies.
+
+
+Les applications peuvent être mises à jour ou remplacées sans perturber l'accès aux données.
+
+
+=== Optimisation des Coûts :
+
+La centralisation et la meilleure gestion des données peuvent réduire les coûts de stockage et de gestion des données.
+
+
+== Exemples et Cas d'Utilisation
+
+=== Grandes Entreprises : De grandes organisations adoptent cette architecture pour gérer des volumes massifs de données provenant de diverses sources internes et externes.
+
+
+=== Technologies Cloud : 
+
+Les plateformes cloud modernes, comme AWS ou Azure, offrent des services qui facilitent la mise en œuvre d'une architecture centrée sur les données.
+
+
+=== Industries Axées sur les Données : 
+
+Les secteurs tels que la finance, la santé, et le commerce électronique, où les données jouent un rôle crucial dans les opérations et les décisions stratégiques.
+
+=== Challenges et Considérations
+
+=== Complexité de l'Intégration : 
+
+Intégrer une architecture centrée sur les données dans un environnement existant peut être complexe et nécessiter une refonte significative.
+
+=== Compétences et Culture : 
+
+L'adoption de cette approche nécessite souvent un changement de culture au sein de l'organisation, ainsi que le développement de nouvelles compétences en gestion des données.
+
+=== Gestion de la Sécurité : 
+
+La centralisation des données pose des défis importants en matière de sécurité et de protection des données.
+
+En somme, l'architecture centrée sur les données permet aux organisations de maximiser la valeur de leurs données tout en améliorant la flexibilité et l'efficacité de leurs systèmes informatiques.
+

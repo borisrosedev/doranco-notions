@@ -1,0 +1,115 @@
+= L'architecture client-serveur
+
+== Définition
+
+=== Qu'est-ce que l'architecture client-serveur ?
+
+L'architecture Client-Serveur répartit les tâches entre les fournisseurs d'un service, appelés Serveurs, et les consommateurs du service, appelés Clients. 
+
+Un Serveur est comme le cuisinier dans notre métaphore du restaurant, et le Client est le consommateur. 
+
+Tout comme le véritable client du restaurant, les Clients initient généralement des sessions de communication avec les Serveurs qui attendent les demandes entrantes. 
+
+Le dispositif (ordinateur portable, tablette, smartphone) qu'un Client utilise pour demander un service au Serveur sert de médiateur entre le consommateur de service et le fournisseur de service, et sait comment parler avec les deux.
+
+== Quelle est la structure de l'architecture client-serveur ? 
+
+Une architecture Client-Serveur standard comporte trois parties :
+
+=== Le Front-End : 
+
+Il s'agit de la partie du logiciel qui interagit avec les utilisateurs, même s'ils se trouvent sur des plateformes différentes avec des technologies différentes. 
+
+Dans une architecture Client-Serveur, les modules front-end sont conçus pour interagir avec tous les appareils existant sur le marché. 
+
+Cela comprend les écrans de connexion, les menus, les écrans de données et les rapports qui fournissent et reçoivent des informations des utilisateurs. 
+
+Par exemple, la plupart des outils et frameworks de développement permettent de créer une version du programme qui fonctionne à la fois pour les PC, les tablettes et les téléphones.
+
+Le front-end est comme le client du restaurant, et le matériel (PC, tablette ou téléphone) est comme le serveur du restaurant.
+
+
+=== Le serveur d'application (Application Server) : 
+
+Il s'agit du Serveur où sont installés les modules logiciels de l'application. Il se connecte à la base de données et interagit avec les utilisateurs. Le serveur d'application est comme le cuisinier du restaurant de notre exemple.
+
+=== Le serveur de base de données (Database Server) : 
+
+Il contient les tables, les index et les données gérés par l'application. Les recherches et les opérations d'insertion/de suppression/de mise à jour sont exécutées ici. 
+
+
+
+== Comment cela fonctionne-t-il en pratique ? 
+
+L'utilisateur (User) fait une demande via le front-end, par exemple : « Donne-moi toutes les factures des clients du 1er janvier jusqu’à aujourd'hui, pour les clients qui ont acheté le produit X ».
+
+Le serveur d'application reçoit cette demande et l'envoie à la base de données. Le serveur de base de données exécute cette requête et envoie la réponse au serveur d'application, qui renvoie le résultat au client à l'aide du module front-end.
+
+L'utilisation de l'architecture Client-Serveur présente plusieurs avantages :
+
+Comme vous pouvez le voir dans notre exemple, l'architecture Client-Serveur sépare le matériel, le logiciel et la fonctionnalité du système. Par exemple, si une adaptation du logiciel est nécessaire pour un pays spécifique, autrement dit si un changement de fonctionnalité est nécessaire, celui-ci peut être adapté dans le système sans avoir à développer une nouvelle version pour les téléphones, les tablettes ou les ordinateurs portables.
+
+Puisque cette architecture sépare le matériel, le logiciel et la fonctionnalité du système, seule la partie front-end doit être adaptée pour communiquer avec différents appareils.
+
+Il existe également quelques inconvénients majeurs :
+
+Si tous les Clients demandent simultanément des données au Serveur, celui-ci peut être surchargé. 
+
+Si le Serveur tombe en panne pour une raison quelconque, aucun utilisateur ne peut utiliser le système.
+
+Maintenant que vous savez comment cette architecture fonctionne, voyons comment l'utiliser !
+
+Quand utiliser l'architecture client-serveur ? 
+Voici quelques situations réelles où cette architecture peut être utile :
+
+Nom de l'exemple 
+
+Définition 
+
+Exemple concret 
+
+Avantages
+
+Progiciel de gestion intégré (ERP)
+
+Un ERP est un grand logiciel qui contient toutes les fonctionnalités administratives que la plupart des entreprises utilisent généralement : comptes fournisseurs, comptes clients, gestion des stocks, gestion des RH, gestion de la production, gestion des fournisseurs, achats, trésorerie, finances, comptabilité, etc. Ces modules contiennent des fonctionnalités standard et prédéfinies qui sont adaptées lors de l'implémentation du logiciel. 
+
+SAP (sap.com).
+
+Oracle Business Suite (oracle.com).
+
+Microsoft Dynamics (microsoft.com).
+
+Infor (infor.com).
+
+Epicor (epicor.com).
+
+Les ERP sont généralement basés sur une architecture client-serveur car ils possèdent un module central qui gère les fonctionnalités et qui communique avec la base de données. Il s'agit des clients du système (les utilisateurs) dispersés dans toute l'organisation. Ces utilisateurs disposent de différents appareils, matériels et canaux de communication, et ils doivent tous communiquer avec le serveur.
+
+== Serveur d'impression
+
+Un serveur d'impression est un dispositif qui relie les utilisateurs d'un réseau à un groupe d'imprimantes. Les utilisateurs envoient leurs demandes d'impression au serveur d'impression plutôt qu’aux imprimantes directement. Le serveur d'impression gère les authentifications, les autorisations et les priorités des travaux.
+
+Tout logiciel de réseau comprend un serveur d'impression. Exemples :
+
+Microsoft Windows Homegroup.
+
+Linux Network Manager.
+
+HP Network Management Center.
+
+Les serveurs d'impression utilisent généralement une architecture client-serveur, puisqu'ils peuvent connecter différents clients disposant de différents périphériques ou systèmes d'exploitation, à un groupe d'imprimantes qui peuvent elles aussi être très diverses.
+
+== Serveur de messagerie
+
+Un serveur de messagerie est un système logiciel qui gère les e-mails entrants et sortants dans une organisation.
+
+IBM Lotus Domino.
+
+Sendmail.
+
+Microsoft Exchange Server.
+
+Le client est convivial et cache à l'utilisateur l'aspect technique des courriers électroniques.
+
+Les clients peuvent disposer de différents appareils pour lire leur courrier : iPhones, téléphones Android, tablettes, PC, ordinateurs portables, etc.

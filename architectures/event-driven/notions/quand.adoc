@@ -1,0 +1,37 @@
+== Quand utiliser l'architecture pilotée par les événements ? 
+
+== Système de micro-blogging
+
+Un système qui publie des messages courts et permet aux utilisateurs de les recevoir dans leur flux en fonction des canaux ou des sujets.
+
+twitter.com.
+
+Il peut y avoir des millions de canaux puisqu'ils sont définis par les utilisateurs.
+
+Les utilisateurs s'abonnent ou se désabonnent aux canaux comme ils le souhaitent.
+
+=== Système d’approvisionnement
+
+Un système d'approvisionnement est une application d'une société de téléphonie mobile qui crée une ligne téléphonique lorsque le client en achète une, définit les procédures de facturation correspondantes en fonction du client et s'assure que l'appareil parvient au client.
+
+=== ...
+Oracle Business Suite (oracle.com).
+Amdocs Provisioning System (Amdocs.com).
+=== ...
+
+Les opérateurs de téléphonie mobile disposent de milliers de points de vente dans les centres commerciaux, dans la rue et dans d'autres lieux publics.
+
+Lorsqu'une ligne est vendue à un client, un événement est publié dans le bus d'événements. De nombreuses applications des systèmes internes de l'entreprise sont abonnées à ce type d'événement (canal) et agissent en conséquence.
+
+=== Système d'automatisation d'usine
+
+Un système d'automatisation d'usine est un système logiciel qui contrôle la production dans une usine, généralement dans un environnement robotisé.
+
+Ce système agit généralement sur des événements qui se produisent dans le processus de production, par exemple, un certain moteur qui dépasse un seuil de température.
+=== ...
+Siemens STEP7 (siemens.com).
+Rockwell Factory Talk (rockwell.com).
+=== ...
+Si aucune erreur ne se produit, la production de l'usine se poursuit normalement.
+
+Si une erreur, une exception ou un avertissement est détecté par le système de contrôle, un événement est publié dans le bus d'événements et de nombreux modules de contrôle peuvent y réagir.

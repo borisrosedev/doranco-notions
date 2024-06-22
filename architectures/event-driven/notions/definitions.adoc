@@ -1,0 +1,12 @@
+= Définitions
+
+== Événement : quelque chose qui se produit et qui affecte un utilisateur d'un système.
+
+== Déclencheur : 
+
+un type d'événement. C'est un petit événement qui induit un comportement.
+
+== Comportement : 
+
+une réaction à un événement.
+

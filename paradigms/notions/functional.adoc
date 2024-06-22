@@ -1,0 +1,5 @@
+= La programmation fonctionnelle
+
+== Qu’est-ce que la programmation fonctionnelle ?
+
+La programmation fonctionnelle est un paradigme de programmation déclaratif, traitant des opérations successivement en évitant les mutations de données et les changements d’état.

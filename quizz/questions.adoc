@@ -1,0 +1,50 @@
+= Quizz
+
+== Architectures
+
+=== Question 1
+
+Dans l'architecture centrée sur les données: 
+Les décisions de conception sont guidées par la façon dont les données ...
+
+=== Question 2
+
+Des outils pour gérer, nettoyer et assurer la qualité des données, comme les solutions de ...
+
+=== Question 3
+Avec l'architecture centrée sur les données:
+
+Les systèmes peuvent évoluer plus facilement pour répondre à de ... ... ... ou pour intégrer de nouvelles technologies.
+
+=== Question 4
+
+Le dépôt de services web (Web service repository) est ...
+
+=== Question 5
+
+Google a développé l'application Gmail en créant ...
+
+=== Question 6
+
+La couche de fonctionnalités (Functionality Layer) : Il s'agit de la couche qui présente ... , ... et les procédures du système selon la couche des règles de gestion. 
+
+Elle détermine comment les ... ... fonctionnent, comment les ... fonctionnent et comment le système navigue entre les écrans.
+
+=== Question 7
+
+une architecture en couches standard comporte ... parties
+
+=== Question 8 
+
+Comportement : une réaction à un ...
+
+
+
+== Paradigmes
+
+
+=== Question 9 
+
+L’abstraction est le principe le plus fondamental de la ... 
+
+Il consiste à afficher ou masquer les détails d’un objet à l’utilisateur (ou aux autres objets avec lequel il interagit) pour ... que les éléments qui leur seront utiles.

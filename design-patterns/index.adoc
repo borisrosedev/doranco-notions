@@ -1,0 +1,51 @@
+= Les design-patterns
+
+== Introduction
+
+Pour faire face aux problèmes récurrents que les développeurs ont à résoudre, l’intelligence collective de ces derniers a mis en évidence les design patterns, ou patrons de conceptions.
+
+== Définition
+
+Les design patterns sont des descriptions ou des modèles de solutions répétables à un problème récurrent dans la conception logicielle. 
+
+
+Ils ne sont pas présentés sous forme de code mais sous forme de concepts à implémenter dans votre code source.
+
+== Les écueils de la programmation orientée objet
+
+La programmation orientée objet ayant pour but d’apporter une solution à la modélisation d’un problème, elle peut rapidement induire une grande complexité. 
+
+== La solution : les design patterns
+
+Les design patterns ont pour but d’accélérer votre développement en proposant des solutions testées et éprouvés à vos problèmes de conceptions de façon à avoir un code source clair répondant à vos besoins métier.
+
+=== Un standard dans la POO
+
+Les design patterns agissent comme un standard dans la programmation orientée objet, permettant à tout développeur ayant ces notions de comprendre l’implémentation d’une solution.
+
+== 3 grandes familles de DP
+
+Plus d’une vingtaine de design patterns ont émergé, se catégorisant en 3 grandes familles.
+
+=== Les patterns de création
+
+Les patterns de création (qui traitent de l’instanciation des objets), comme les patterns:
+[%step]
+* Factory;
+* le Singleton;
+* le Prototype (dont JavaScript suit le pattern); 
+* le Builder;
+
+=== Les patterns de structure
+
+Les patterns de structure (qui se concentrent sur la composition de la classe ou de l’objet), tels que:
+[%step]
+* le pattern Decorator; 
+* le pattern Facade; 
+* le pattern Adapter;
+
+=== les Patterns de comportement
+
+Ils portent sur la communication des objets.
+
+Les Design patterns sont des solutions évolutives et cumulables. Leurs façons d’être implémentés ne sont pas gravées dans le marbre mais justement ont pour vocation d’être adapté à votre situation.

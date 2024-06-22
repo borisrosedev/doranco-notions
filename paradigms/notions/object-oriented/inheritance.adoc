@@ -1,0 +1,5 @@
+= L'héritage
+
+L’héritage (ou inheritance en anglais) est le principe de la POO qui permet à un objet d’acquérir les propriétés d’un autre objet. 
+
+Souvent on parle d’héritage de classes pour faire référence à cette notion.
