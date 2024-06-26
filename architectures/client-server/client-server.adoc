@@ -37,8 +37,6 @@ Il s'agit du Serveur où sont installés les modules logiciels de l'application.
 
 Il contient les tables, les index et les données gérés par l'application. Les recherches et les opérations d'insertion/de suppression/de mise à jour sont exécutées ici. 
 
-
-
 == Comment cela fonctionne-t-il en pratique ? 
 
 L'utilisateur (User) fait une demande via le front-end, par exemple : « Donne-moi toutes les factures des clients du 1er janvier jusqu’à aujourd'hui, pour les clients qui ont acheté le produit X ».
@@ -59,18 +57,11 @@ Si le Serveur tombe en panne pour une raison quelconque, aucun utilisateur ne pe
 
 Maintenant que vous savez comment cette architecture fonctionne, voyons comment l'utiliser !
 
-Quand utiliser l'architecture client-serveur ? 
+== Quand utiliser l'architecture client-serveur ? 
 Voici quelques situations réelles où cette architecture peut être utile :
 
-Nom de l'exemple 
 
-Définition 
-
-Exemple concret 
-
-Avantages
-
-Progiciel de gestion intégré (ERP)
+== Progiciel de gestion intégré (ERP)
 
 Un ERP est un grand logiciel qui contient toutes les fonctionnalités administratives que la plupart des entreprises utilisent généralement : comptes fournisseurs, comptes clients, gestion des stocks, gestion des RH, gestion de la production, gestion des fournisseurs, achats, trésorerie, finances, comptabilité, etc. Ces modules contiennent des fonctionnalités standard et prédéfinies qui sont adaptées lors de l'implémentation du logiciel. 
 
