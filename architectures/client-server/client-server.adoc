@@ -55,7 +55,6 @@ Si tous les Clients demandent simultanément des données au Serveur, celui-ci p
 
 Si le Serveur tombe en panne pour une raison quelconque, aucun utilisateur ne peut utiliser le système.
 
-Maintenant que vous savez comment cette architecture fonctionne, voyons comment l'utiliser !
 
 == Quand utiliser l'architecture client-serveur ? 
 Voici quelques situations réelles où cette architecture peut être utile :
